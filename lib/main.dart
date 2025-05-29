@@ -1,11 +1,8 @@
-import 'package:crudapp/user_form.dart';
-import 'package:crudapp/user_list.dart';
-import 'package:crudapp/user_provider.dart';
 import 'package:flutter/material.dart';
-
+import 'routes.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,16 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UserProvider(
-      child: MaterialApp(
-        title: Text 'CRUD APP',
-        home: UserForm(),
-        ),
-        routes: {
-          "/create": (_) => UserForm(),
-          "/list": (_) => UserList(),
-        },
-      ),
+    return MaterialApp(
+      title: 'NoPhone Love',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      routes: appRoutes,
+      initialRoute: '/',
+      debugShowCheckedModeBanner: false,
     );
   }
 }
